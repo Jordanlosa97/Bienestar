@@ -1,12 +1,12 @@
  version:2
- jobs: # we now have TWO jobs, so that a workflow can coordinate them!
-   one: # This is our first job.
-     docker: # it uses the docker executor
-       - image: circleci/ubuntu:18.04 # specifically, a docker image with ruby 2.4.1
+ jobs:# we now have TWO jobs, so that a workflow can coordinate them!
+   one:# This is our first job.
+     docker:# it uses the docker executor
+       - image:circleci/ubuntu:18.04 # specifically, a docker image with ruby 2.4.1
      # Steps are a list of commands to run inside the docker container above.
      steps:
-       - checkout # this pulls pulls code down from GitHub
-       - run: echo "A first hello" # This prints "A first hello" to stdout.
+       - checkout# this pulls pulls code down from GitHub
+       - run: echo "A first hello"# This prints "A first hello" to stdout.
        - run: sleep 25 # a command telling the job to "sleep" for 25 seconds.
    two: # This is our second job.
      docker: # it runs inside a docker image, the same as above.
