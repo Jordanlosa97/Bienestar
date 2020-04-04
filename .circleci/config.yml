@@ -2,14 +2,6 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
-   approve:
-      - request-testing:
-          type: approval
-          requires:
-            - build
-      - deploy-aws:
-          requires:
-            - request-testing
    steps:
       - checkout
       - node/with-cache:
@@ -33,7 +25,6 @@ workflows:
     build-and-test:
       jobs:
         - build-and-test
-        - approve
         - deployCode
         
         
