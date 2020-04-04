@@ -2,6 +2,8 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
+  docker: # it runs inside a docker image, the same as above.
+       - image: circleci/ubuntu:18.04
   build-and-test:
     executor:
       name: node/default
