@@ -5,7 +5,7 @@ jobs:
   
   build-and-test:
     docker: # it runs inside a docker image, the same as above.
-       - image: circleci/ruby:2.4.1
+       - image: circleci/node:13.12
     executor:
       name: node/default
     steps:
