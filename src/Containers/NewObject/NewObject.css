@@ -1,0 +1,88 @@
+a {
+    color: rgb(63,81,181);
+}
+
+
+.inputFile {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputFileLabel {
+    margin-top: 10px;
+    width: 50%;
+    color: black;
+    background-color: #E4EAFA;
+    display: inline-block;
+    cursor: pointer; 
+    position: relative;
+    bottom: 9px;
+    border: 1px solid #9da3a6;
+    border-radius: 4px;
+    font-size: 1em;
+    text-align: center;
+    transition-duration: 0.4s;
+}
+
+.inputFileLabel p, .inputFileLabel img{
+    position: relative;
+    top: 10px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.inputFileLabel img{
+    width: 27px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.inputFileLabel:focus ,
+.inputFileLabel:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 2px 20px 0 rgba(0,0,0,0.19);
+}
+
+.report{
+    background-color: #E4EAFA;
+    color: black;
+    width: 90%;
+    height: 44px;
+    resize: vertical;
+    padding: 0;
+    border: 0;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: 700;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.signUp:hover {
+    background-color: rgb(168, 172, 197);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 2px 20px 0 rgba(0,0,0,0.19);
+}
+
+.previewContainer{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.inputObject{
+    width: 90%;
+    resize: vertical;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 15px;
+    margin-bottom: 5px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto; 
+}
