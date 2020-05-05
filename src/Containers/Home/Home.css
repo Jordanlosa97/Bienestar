@@ -1,0 +1,12 @@
+.TitleNav{
+    color: #152b65;
+}
+.NavBar{
+    background-color: #e3eafa;
+}
+.buttonsNav{
+    background-color: brown;
+}
+.buttonsNav * {
+    display: inline;
+}
