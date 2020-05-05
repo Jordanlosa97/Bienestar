@@ -1,3 +1,4 @@
+import firebase from 'firebase';
 var firebaseConfig = {
     apiKey: "AIzaSyBRL7Rz_clbVUliGgmhE-QAsF0Z9seCUL0",
     authDomain: "proyectobienestar-e39bb.firebaseapp.com",
@@ -9,5 +10,6 @@ var firebaseConfig = {
     measurementId: "G-Y1L7L7VB2V"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  const Firebase = firebase.initializeApp(firebaseConfig);
+  export default Firebase;
   firebase.analytics();
