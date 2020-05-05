@@ -4,8 +4,6 @@ import {  Navbar, Nav,NavDropdown, Button, Modal, Form} from 'react-bootstrap';
 import './Home.css';
 import useStyles from './HomeStyles.js'
 
-
-
 function Home() {
   const classes = useStyles();
   const [smShow, setSmShow] = useState(false);
@@ -50,7 +48,6 @@ function Home() {
         </Modal.Body>
       </Modal>
   </Navbar>
-  
   );
 }
 
