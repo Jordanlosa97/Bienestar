@@ -1,4 +1,8 @@
-import firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/firebase-app';
+import "firebase/auth";
+import "firebase/firestore";
+import "firebase/firebase-database";
 var firebaseConfig = {
     apiKey: "AIzaSyBRL7Rz_clbVUliGgmhE-QAsF0Z9seCUL0",
     authDomain: "proyectobienestar-e39bb.firebaseapp.com",
@@ -10,6 +14,10 @@ var firebaseConfig = {
     measurementId: "G-Y1L7L7VB2V"
   };
   // Initialize Firebase
+
   const Firebase = firebase.initializeApp(firebaseConfig);
+  export var provider = new firebase.auth.OAuthProvider('microsoft.com');
+
   export default Firebase;
-  firebase.analytics();
+  
+  
