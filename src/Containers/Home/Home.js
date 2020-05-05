@@ -1,8 +1,6 @@
 import React, { Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Modal, Form} from 'react-bootstrap';
 import './Home.css';
-import {Link} from 'react-router-dom';
 import firebase,{provider} from '../../Intances/firebase.js'
 import logo from '../../images/ic_logo-web.png'
 
@@ -129,46 +127,6 @@ class Home extends Component {
         <div className="bola bola3"></div>
         <div className="bola bola4"></div>
       </div>
-      <Modal
-        size="sm"
-        show={this.state.smShow}
-        onHide={() => this.setSmShow(false)}
-        aria-labelledby="example-modal-sizes-title-sm">
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-sm">
-            Ingresar
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Correo</Form.Label>
-              <Form.Control 
-                type="email" 
-                placeholder="Enter email" 
-                value={this.state.email} 
-                onChange={(t) => this.changeState('email',t)}
-              />
-            </Form.Group>
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Contraseña</Form.Label>
-              <Form.Control 
-                type="password" 
-                placeholder="Password"
-                value={this.state.password} 
-                onChange={(t) => this.changeState('password',t)}
-              />
-            </Form.Group>
-            <Form.Group controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-            <Button variant="primary" onClick={() => this.login()}>
-              Ingresar
-            </Button>
-            <Button variant="primary" onClick={() => this.loginMicrosoft()}>
-              Microsoft
-            </Button>
-        </Modal.Body>
-      </Modal>
     </div>
   );
   }

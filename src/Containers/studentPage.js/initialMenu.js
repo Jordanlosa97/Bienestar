@@ -1,13 +1,15 @@
-import React,{useState, Component} from 'react';
+import React, { Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {  Navbar, Nav,NavDropdown, Button, Modal, Form} from 'react-bootstrap';
-import './Home.css';
-import Firebase from '../../Intances/firebase.js'
+
+import './initialMenu.css';
+import firebase,{provider} from '../../Intances/firebase.js'
+import logo from '../../images/ic_logo-web.png'
+import objectlost from '../../images/objectLost.jpeg';
+import {Col, Row, Container} from 'react-bootstrap'
 
 
 
-
-class initialMenu extends Component {
+class InitialMenu extends Component {
   
   state={
     smShow:false,
@@ -19,14 +21,63 @@ class initialMenu extends Component {
       smShow: s
     })
   }
+
+  loginMicrosoft = () => {
+    console.log("Logeando con microsoft")
+    provider.setCustomParameters({
+      // Force re-consent.
+      prompt: 'consent',
+      // Target specific email with login hint.
+      login_hint: 'student@unisabana.edu.co'
+    });
+    const _this = this;
+    firebase.auth().signInWithPopup(provider)
+      .then(function(result) {
+        console.log(result.user)
+        firebase.database().ref('users/' + result.user.uid).once('value').then(function(snapshot) {
+        var rol = (snapshot.val() && snapshot.val().rol) || 'Anonymous';
+        if(rol === 'Anonymous')
+        {
+          console.log('Nuevo usuario');
+          firebase.database().ref('users/' + result.user.uid).set({
+          rol: 'Estudiante'
+            })
+        }
+        else
+        {
+          if(rol === 'Estudiante')
+          {
+            //Enviar a pantalla estudiante
+            console.log('estudiante usuario');
+            _this.props.history.push('/StudentMenu')
+            
+          }
+          else
+          {
+            //Enviar a administrador
+            console.log('admin usuario');
+          }
+        }
+        
+        })
+        
+      })
+      .catch(function(error) {
+        // Handle error.
+
+        console.log('Error login microsoft')
+        console.log(error)
+      });
+  }
+
   login = () => {
     console.log(this.state.email  + '  ' + this.state.password)
     /* 
     ---Create new user---
-    Firebase.auth().createUserWithEmailAndPassword(this.state.email,this.state.password)
+    firebase.auth().createUserWithEmailAndPassword(this.state.email,this.state.password)
     .then((response) => {
       console.log(response)
-      Firebase.database().ref('users/' + response.user.uid).set({
+      firebase.database().ref('users/' + response.user.uid).set({
         rol: 'Estudiante'
       })
     })
@@ -34,10 +85,10 @@ class initialMenu extends Component {
       console.log(error)
     })
     */
-   Firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password)
+   firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password)
     .then((response) => {
       console.log(response)
-      Firebase.database().ref('users/' + response.user.uid).once('value').then(function(snapshot) {
+      firebase.database().ref('users/' + response.user.uid).once('value').then(function(snapshot) {
         var rol = (snapshot.val() && snapshot.val().rol) || 'Anonymous';
         console.log(rol)
         if(rol === 'Estudiante')
@@ -64,20 +115,42 @@ class initialMenu extends Component {
 
   render() {
   return (
-  <Navbar bg="light" expand="lg">
-    <Navbar.Brand  color="blue" href="#home">B-Sabana</Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-      <Navbar.Collapse id="basic-navbar-nav">
-      <Nav.Link  color="red" href="#home">Home</Nav.Link>
-      <Nav.Link href="#link">Link</Nav.Link>
-      <Nav.Link className="mr-sm-2">Home</Nav.Link>
-      <Button variant="primary" onClick={() => this.setSmShow(true)}>Ingresar</Button>{' '}
-      </Navbar.Collapse>
+    <Container className="Home">
+      <div className="icon">
+        <img alt={'ds'} className="logo" src={logo}></img>
+        <h1 className="title">B-Sabana</h1>
+      </div>
+      <Row className="menu">
+          <Col md={{ span: 6, offset: 3 }} xs={12} className="centerdiv">
+            <Row className="titlemenu">
+              <h3 className="texttitle">{'¿Qué quieres consultar?'}</h3>
+            </Row>
+            <Row className="listOption">
+              <Col md={6} xs={12} className="OptionCol">
+                <div className="Option">
+                  <img alt={'ds'} className="imageOption" src={objectlost}></img>
+                  <h4 className="nameOption">Implementos deportivos</h4>
+                </div>
+              </Col>
+              <Col md={6} xs={12} className="OptionCol">
+                <div className="Option">
+                  <img alt={'ds'} className="imageOption" src={objectlost}></img>
+                  <h4 className="nameOption">Objetos perdidos</h4>
+                </div>
+              </Col>
+            </Row>
+          </Col>
+      </Row>
       
-  </Navbar>
-  
+      <div className="cloud">
+        <div className="bola bola1"></div>
+        <div className="bola bola2"></div>
+        <div className="bola bola3"></div>
+        <div className="bola bola4"></div>
+      </div>
+    </Container>
   );
   }
 }
 
-export default initialMenu;
+export default InitialMenu;

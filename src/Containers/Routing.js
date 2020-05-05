@@ -16,7 +16,6 @@ export default class Routing extends Component {
               <InitialMenu {...props}/>
           )}/>             
       </BrowserRouter>    
-      
     );
   }
 }
