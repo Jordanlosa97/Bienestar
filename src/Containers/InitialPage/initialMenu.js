@@ -5,7 +5,7 @@ import classes from './initialMenu.css';
 import firebase,{provider} from '../../Intances/firebase.js'
 import logo from '../../images/ic_logo-web.png'
 import objectlost from '../../images/objectLost.jpeg';
-import {Col, Row, Container} from 'react-bootstrap'
+import {Container} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 
 class InitialMenu extends Component {
