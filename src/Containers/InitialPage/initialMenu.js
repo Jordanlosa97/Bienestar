@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import './initialMenu.css';
+import classes from './initialMenu.css';
 import firebase,{provider} from '../../Intances/firebase.js'
 import logo from '../../images/ic_logo-web.png'
 import objectlost from '../../images/objectLost.jpeg';
@@ -42,6 +42,7 @@ class InitialMenu extends Component {
           firebase.database().ref('users/' + result.user.uid).set({
           rol: 'Estudiante'
             })
+          _this.props.history.push('/StudentMenu')
         }
         else
         {
@@ -115,38 +116,33 @@ class InitialMenu extends Component {
 
   render() {
   return (
-    <Container className="Home">
-      <div className="icon">
-        <img alt={'ds'} className="logo" src={logo}></img>
-        <h1 className="title">B-Sabana</h1>
+    <Container className={classes.Home}>
+      <div className={classes.icon}>
+        <img alt={'ds'} className={classes.logo} src={logo}></img>
+        <h1 className={classes.title}>B-Sabana</h1>
       </div>
-      <Row className="menu">
-          <Col md={{ span: 6, offset: 3 }} xs={12} className="centerdiv">
-            <Row className="titlemenu">
-              <h3 className="texttitle">{'¿Qué quieres consultar?'}</h3>
-            </Row>
-            <Row className="listOption">
-              <Col md={6} xs={12} className="OptionCol">
-                <div className="Option">
-                  <img alt={'ds'} className="imageOption" src={objectlost}></img>
-                  <h4 className="nameOption">Implementos deportivos</h4>
-                </div>
-              </Col>
-              <Col md={6} xs={12} className="OptionCol">
-                <div className="Option">
-                  <img alt={'ds'} className="imageOption" src={objectlost}></img>
-                  <h4 className="nameOption">Objetos perdidos</h4>
-                </div>
-              </Col>
-            </Row>
-          </Col>
-      </Row>
+
+      <div className={classes.menu}>
+        <div className={classes.titlemenu}>
+          <h3 className={classes.texttitle}>{'¿Qué deseas consultar?'}</h3>
+        </div>
+
+        <div className={`${classes.sports}  ${classes.Option}`}>
+          <img alt={'ds'} className={classes.imageOption} src={objectlost}></img>
+          <h4 className={classes.nameOption}>Implementos deportivos</h4>
+        </div>
+
+        <div className={`${classes.lost}  ${classes.Option}`}>
+          <img alt={'ds'} className={classes.imageOption} src={objectlost}></img>
+          <h4 className={classes.nameOption}>Objetos perdidos</h4>
+        </div>
+      </div>
       
-      <div className="cloud">
-        <div className="bola bola1"></div>
-        <div className="bola bola2"></div>
-        <div className="bola bola3"></div>
-        <div className="bola bola4"></div>
+      <div className={classes.cloud}>
+        <div className={`${classes.bola}  ${classes.bola1}`}></div>
+        <div className={`${classes.bola}  ${classes.bola2}`}></div>
+        <div className={`${classes.bola}  ${classes.bola3}`}></div>
+        <div className={`${classes.bola}  ${classes.bola4}`}></div>
       </div>
     </Container>
   );

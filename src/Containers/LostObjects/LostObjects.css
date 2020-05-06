@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+html, body {
+    max-width: 100%;
+    max-height: max-content;
+    overflow-x: hidden;
+}
+body {
+    position: relative;
+    /*overflow-y: hidden;*/
+}
+
+.font{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Home{
+    /*width: -webkit-fill-available;*/
+    max-width: 100%;
+    height: 100vh;
+}
+
+.navbar{
+    z-index: 1;
+}
+.titleNav{
+    color: #47525e;
+    font-size: 10px;
+    display: inline;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+.plus{
+    z-index: 1;
+    position: absolute;
+    bottom: 5vh;
+    width: fit-content;
+    right: 5vw;
+}
+.plus:hover{
+    cursor: pointer;
+}
+.addIcon{
+    width: 30px;
+    height: 30px;
+    margin: auto auto 5px auto;
+    display: block;
+    border-radius: 50%;
+}
+.addIcon:hover{
+    -webkit-box-shadow: -4px 4px 5px 0px rgba(21,42,101,0.64);
+    -moz-box-shadow: -4px 4px 5px 0px rgba(21,42,101,0.64);
+    box-shadow: -4px 4px 5px 0px rgba(21,42,101,0.64);
+    cursor: pointer;
+}
+.register{
+    width: min-content;
+    text-align: center;
+    font-size: 7px;
+    color: #152b65;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.icon{
+    z-index: 1;
+    position: relative;
+    top: 75px;
+    margin: auto;
+    display: block;
+    width: fit-content;
+    margin-bottom: 7vh;
+}
+.logo{
+    width: 119px;
+    height: 119px;
+    margin: auto;
+    display: block;
+}
+.title{
+    font-size: 28px;
+    color: #47525e;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.menu{
+    display: block;
+    width: 100%;
+    position: relative;
+    top: 95px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.order{
+    flex-wrap: nowrap;
+    display: flex;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Option{
+    /*width: fit-content;
+    display: inline-block;
+    position: absolute;*/
+    border-radius: 35px;
+    border: 3px solid #152b65;
+    padding: 1.5vw 1.5vw 0 1.5vw;
+    margin: auto;
+}
+.Option:hover{
+    -webkit-box-shadow: -8px 8px 5px 0px rgba(21,42,101,0.64);
+    -moz-box-shadow: -8px 8px 5px 0px rgba(21,42,101,0.64);
+    box-shadow: -8px 8px 5px 0px rgba(21,42,101,0.64);
+    cursor: pointer;
+}
+.imageOption{
+    height: 11vw;
+    border-radius: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nameOption{
+    font-size: 20px;
+    margin-top: 4vh;
+    color: #152b65;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 163px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3vh;
+}
+
+.bola{
+    position: absolute;
+    /*background-color: ##E3EAFA;*/
+    background-color: #E3EAFA;
+    width: 48vw;
+    height: 48vw;
+    /*width: 693px;
+    height: 693px;*/
+    border-radius: 50%;
+}
+.bola1{
+    left: -19vw;
+    top: -538px;
+}
+.bola2{
+    left: 10vw;
+    top: -449px;
+}
+.bola3{
+    left: 46vw;
+    top: -386px;
+}
+.bola4{
+    left: 71vw;
+    top: -449px;
+}
+
+@media only screen and (max-width: 500px) {
+    .bola1{
+        display: none;
+    }
+    .bola2{
+        left: -6vw;
+        top: -65px;
+        width: 71vw;
+        height: 53vw;
+    }
+    .bola3{
+        left: 47vw;
+        top: -35px;
+        width: 62vw;
+        height: 58vw;
+    }
+    .bola4{
+        display: none;
+    }
+
+    .icon{
+        top: 85px;
+    }
+    .logo{
+        width: 108px;
+        height: 108px;
+    }
+    .title{
+        font-size: 26px;
+    }
+
+    .menu{
+        width: 90%;
+        top: 125px;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+
+    }
+    .titlemenu{
+        width: 60%;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        text-align: center;
+        margin-bottom: 7vh;
+    }
+
+    .Option{
+        height: fit-content;
+        width: 100%;
+        display: block;
+        margin-bottom: 5vh;
+        background-color: #152b65;
+    }
+    .imageOption{
+        width: 50%;
+        margin: 0; 
+        display: inline-block;
+        border-radius: 35px;
+    }
+    .nameOption{
+        font-size: 5vw;
+        color: #ffffff;
+        font-weight: bolder;
+        display: inline-block;
+        margin: 0;
+        position: relative;
+        width: 50%;
+        top: 1.6vh;
+    }
+    .lost{
+        left: 0;
+    }
+}
