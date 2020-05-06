@@ -39,6 +39,7 @@ class Home extends Component {
           firebase.database().ref('users/' + result.user.uid).set({
           rol: 'Estudiante'
             })
+          _this.props.history.push('/StudentMenu')
         }
         else
         {
@@ -47,7 +48,6 @@ class Home extends Component {
             //Enviar a pantalla estudiante
             console.log('estudiante usuario');
             _this.props.history.push('/StudentMenu')
-            
           }
           else
           {
