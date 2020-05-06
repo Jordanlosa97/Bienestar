@@ -47,7 +47,7 @@ body {
     top: -425px;
 }
 
-@media only screen and (max-width: 823px) {
+@media only screen and (max-width: 500px) {
     .bola1{
         display: none;
     }

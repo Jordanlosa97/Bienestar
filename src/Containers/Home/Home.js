@@ -7,7 +7,6 @@ import logo from '../../images/ic_logo-web.png'
 
 
 class Home extends Component {
-  
   state={
     smShow:false,
     email: '',
@@ -25,7 +24,6 @@ class Home extends Component {
       // Force re-consent.
       prompt: 'consent',
       // Target specific email with login hint.
-      login_hint: 'student@unisabana.edu.co'
     });
     const _this = this;
     firebase.auth().signInWithPopup(provider)

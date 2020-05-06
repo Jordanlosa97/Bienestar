@@ -2,22 +2,23 @@ import React, { Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import classes from './LostObjects.css';
-import firebase,{provider} from '../../Intances/firebase.js'
+//import firebase,{provider} from '../../Intances/firebase.js'
 import logo from '../../images/ic_logo-web.png'
 import plus from '../../images/plusIcon.png'
 import objectlost from '../../images/objectLost.jpeg';
 import {Navbar, Nav, NavDropdown, Container} from 'react-bootstrap'
+import axios from 'axios'
 
 class LostObjects extends Component {
-  state={
-    isAdmin: false,
+  state = {
+    rol : 'Administrador'
   }
 
   renderAddIcon() {
-    if(this.state.isAdmin === false){
+    if(this.state.rol === 'Estudiante'){
       return(<div></div>)
     }
-    if(this.state.isAdmin === true){
+    if(this.state.rol === 'Administrador'){
       return(
         <div className={classes.plus}>
           <img alt={'plus'} className={classes.addIcon} src={plus}></img>
