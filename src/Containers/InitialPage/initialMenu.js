@@ -6,8 +6,7 @@ import firebase,{provider} from '../../Intances/firebase.js'
 import logo from '../../images/ic_logo-web.png'
 import objectlost from '../../images/objectLost.jpeg';
 import {Col, Row, Container} from 'react-bootstrap'
-
-
+import {Link} from 'react-router-dom';
 
 class InitialMenu extends Component {
   
@@ -73,20 +72,7 @@ class InitialMenu extends Component {
 
   login = () => {
     console.log(this.state.email  + '  ' + this.state.password)
-    /* 
-    ---Create new user---
-    firebase.auth().createUserWithEmailAndPassword(this.state.email,this.state.password)
-    .then((response) => {
-      console.log(response)
-      firebase.database().ref('users/' + response.user.uid).set({
-        rol: 'Estudiante'
-      })
-    })
-    .catch((error) => {
-      console.log(error)
-    })
-    */
-   firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password)
+    firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password)
     .then((response) => {
       console.log(response)
       firebase.database().ref('users/' + response.user.uid).once('value').then(function(snapshot) {
@@ -132,10 +118,11 @@ class InitialMenu extends Component {
           <h4 className={classes.nameOption}>Implementos deportivos</h4>
         </div>
 
-        <div className={`${classes.lost}  ${classes.Option}`}>
+        <Link to="/ObjetosPerdidos" className={`${classes.lost}  ${classes.Option}`} 
+              style={{textDecoration:'none'}}>
           <img alt={'ds'} className={classes.imageOption} src={objectlost}></img>
           <h4 className={classes.nameOption}>Objetos perdidos</h4>
-        </div>
+        </Link>
       </div>
       
       <div className={classes.cloud}>

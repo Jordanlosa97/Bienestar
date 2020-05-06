@@ -8,8 +8,6 @@ import plus from '../../images/plusIcon.png'
 import objectlost from '../../images/objectLost.jpeg';
 import {Navbar, Nav, NavDropdown, Container} from 'react-bootstrap'
 
-
-
 class InitialMenu extends Component {
   
   state={

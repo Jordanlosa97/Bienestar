@@ -69,20 +69,7 @@ class Home extends Component {
 
   login = () => {
     console.log(this.state.email  + '  ' + this.state.password)
-    /* 
-    ---Create new user---
-    firebase.auth().createUserWithEmailAndPassword(this.state.email,this.state.password)
-    .then((response) => {
-      console.log(response)
-      firebase.database().ref('users/' + response.user.uid).set({
-        rol: 'Estudiante'
-      })
-    })
-    .catch((error) => {
-      console.log(error)
-    })
-    */
-   firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password)
+    firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password)
     .then((response) => {
       console.log(response)
       firebase.database().ref('users/' + response.user.uid).once('value').then(function(snapshot) {
