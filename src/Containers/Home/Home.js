@@ -43,7 +43,7 @@ class Home extends Component {
       provider.setCustomParameters({
         // Force re-consent.
         // Target specific email with login hint.
-        login_hint: 'user@unisabana.edu.co'
+        //login_hint: 'user@unisabana.edu.co'
       });
       return firebase.auth().signInWithPopup(provider)
       .then(function(result) {
