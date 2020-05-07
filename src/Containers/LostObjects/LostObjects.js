@@ -11,7 +11,7 @@ import axios from 'axios'
 
 class LostObjects extends Component {
   state = {
-    rol : 'Estudiante'
+    rol : 'Administrador'
   }
 
   renderAddIcon() {

@@ -283,4 +283,13 @@ body {
     .up{
         width: fit-content;
     }
+
+    .plus{
+        top: 5vh;
+        right: 5vw;
+    }
+    .addIcon{
+        width: 7.3vw;
+        height: 7.3vw;
+    }
 }
