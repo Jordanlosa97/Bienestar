@@ -60,17 +60,25 @@ class LostObjects extends Component {
           <div className={classes.order}>
             <div className={`${classes.search}  ${classes.Option}`}>
               <img alt={'ds'} className={classes.imageOption} src={objectlost}></img>
-              <h4 className={classes.nameOption}>Buscar deportivos</h4>
+              <div className={classes.bName}>
+                <h4 className={classes.nameOption}>Buscar deportivos</h4>
+              </div>
             </div>
 
             <div className={`${classes.found}  ${classes.Option}`}>
               <img alt={'ds'} className={classes.imageOption} src={objectlost}></img>
-              <h4 className={classes.nameOption}>¿Encontraste algo?</h4>
+              <div className={classes.bName}>
+                <h4 className={classes.nameOption}>¿Encontraste algo?</h4>
+              </div>
             </div>
 
             <div className={`${classes.weHave}  ${classes.Option}`}>
               <img alt={'ds'} className={classes.imageOption} src={objectlost}></img>
-              <h4 className={classes.nameOption}>¿Tenemos algo tuyo?</h4>
+              <div className={classes.bName}>  
+                <h4 className={`${classes.page}  ${classes.nameOption}`}>¿Tenemos algo tuyo?</h4>
+                <h4 className={`${classes.up}  ${classes.nameOption}`}>¿Tenemos algo</h4>
+                <h4 className={`${classes.down}  ${classes.nameOption}`}>tuyo?</h4>
+              </div>
             </div>
           </div>
         </div>
