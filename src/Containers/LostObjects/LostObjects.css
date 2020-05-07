@@ -180,7 +180,22 @@ body {
     top: -449px;
 }
 
+.up{
+    display: none;
+}
+.down{
+    display: none;
+}
+
 @media only screen and (max-width: 500px) {
+    body{
+        overflow-y: scroll;
+    }
+
+    .navbar{
+        display: none;
+    }
+
     .bola1{
         display: none;
     }
@@ -201,19 +216,25 @@ body {
     }
 
     .icon{
-        top: 85px;
+        top: 9vh;
     }
     .logo{
-        width: 108px;
-        height: 108px;
+        width: 36vw;
+        height: 36vw;
     }
     .title{
-        font-size: 26px;
+        font-size: 6.3vw;
+        text-align: center;
+    }
+
+    .order{
+        width: 100%;
+        flex-direction: column;
     }
 
     .menu{
         width: 90%;
-        top: 125px;
+        top: 9vh;
         margin-right: auto;
         margin-left: auto;
         display: block;
@@ -234,24 +255,43 @@ body {
         display: block;
         margin-bottom: 5vh;
         background-color: #152b65;
+        padding: 0;
     }
     .imageOption{
-        width: 50%;
+        width: 45%;
+        height: 14.2vh;
         margin: 0; 
         display: inline-block;
         border-radius: 35px;
+    }
+    .bName{
+        display: inline-block;
+        width: 55%;
     }
     .nameOption{
         font-size: 5vw;
         color: #ffffff;
         font-weight: bolder;
-        display: inline-block;
-        margin: 0;
+        display: block;
+        margin: 0 auto 0 auto;
         position: relative;
-        width: 50%;
+        width: min-content;
         top: 1.6vh;
     }
-    .lost{
-        left: 0;
+
+    .page{
+        display: none;
+    }
+    .up{
+        width: fit-content;
+    }
+
+    .plus{
+        top: 5vh;
+        right: 5vw;
+    }
+    .addIcon{
+        width: 7.3vw;
+        height: 7.3vw;
     }
 }
