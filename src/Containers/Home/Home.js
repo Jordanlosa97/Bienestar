@@ -8,7 +8,6 @@ import logo from '../../images/ic_logo-web.png'
 
 
 class Home extends Component {
-  
   state={
     smShow:false,
     email: '',
@@ -36,7 +35,6 @@ class Home extends Component {
     provider.setCustomParameters({
       // Force re-consent.
       // Target specific email with login hint.
-      login_hint: 'student@unisabana.edu.co'
     });
     const _this = this;
     firebase.auth().signInWithPopup(provider)
@@ -50,6 +48,7 @@ class Home extends Component {
           firebase.database().ref('users/' + result.user.uid).set({
           rol: 'Estudiante'
             })
+          _this.props.history.push('/StudentMenu')
         }
         else
         {
@@ -58,7 +57,6 @@ class Home extends Component {
             //Enviar a pantalla estudiante
             console.log('estudiante usuario');
             _this.props.history.push('/StudentMenu')
-            
           }
           else
           {
@@ -80,20 +78,7 @@ class Home extends Component {
 
   login = () => {
     console.log(this.state.email  + '  ' + this.state.password)
-    /* 
-    ---Create new user---
-    firebase.auth().createUserWithEmailAndPassword(this.state.email,this.state.password)
-    .then((response) => {
-      console.log(response)
-      firebase.database().ref('users/' + response.user.uid).set({
-        rol: 'Estudiante'
-      })
-    })
-    .catch((error) => {
-      console.log(error)
-    })
-    */
-   firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password)
+    firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password)
     .then((response) => {
       console.log(response)
       firebase.database().ref('users/' + response.user.uid).once('value').then(function(snapshot) {
@@ -123,20 +108,20 @@ class Home extends Component {
 
   render() {
   return (
-    <div className="Home">
-      <div className="icon">
-        <img alt={'ds'} className="logo" src={logo}></img>
-        <h1 className="title">B-Sabana</h1>
+    <div className={classes.Home}>
+      <div className={classes.icon}>
+        <img alt={'ds'} className={classes.logo} src={logo}></img>
+        <h1 className={classes.title}>B-Sabana</h1>
       </div>
-      <div className="button"
+      <div className={classes.button}
         onClick={() => this.loginMicrosoft()}>
-          <h1 className="buttonTitle">Ingresar</h1>
+          <h1 className={classes.buttonTitle}>Ingresar</h1>
       </div>
-      <div className="cloud">
-        <div className="bola bola1"></div>
-        <div className="bola bola2"></div>
-        <div className="bola bola3"></div>
-        <div className="bola bola4"></div>
+      <div className={classes.cloud}>
+        <div className={`${classes.bola}  ${classes.bola1}`}></div>
+        <div className={`${classes.bola}  ${classes.bola2}`}></div>
+        <div className={`${classes.bola}  ${classes.bola3}`}></div>
+        <div className={`${classes.bola}  ${classes.bola4}`}></div>
       </div>
     </div>
   );

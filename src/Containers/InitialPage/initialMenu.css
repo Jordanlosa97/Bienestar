@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+html, body {
+    max-width: 100%;
+    max-height: max-content;
+    overflow-x: hidden;
+}
+body {
+    position: relative;
+    /*overflow-y: hidden;*/
+}
+
+.TitleNav{
+    color: white;
+    margin-left: 15px;
+    text-align: center;
+}
+
+.Home{
+    /*width: -webkit-fill-available;*/
+    max-width: 100%;
+    height: 100vh;
+}
+
+.icon{
+    z-index: 1;
+    position: relative;
+    top: 125px;
+    margin: auto;
+    display: block;
+    width: fit-content;
+}
+.logo{
+    width: 119px;
+    height: 119px;
+    margin: auto;
+    display: block;
+}
+.title{
+    font-size: 28px;
+    color: #47525e;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.menu{
+    display: block;
+    width: 442px;
+    position: relative;
+    top: 140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.titlemenu{
+    width: fit-content;
+    display: block;
+    margin: auto;
+}
+
+.texttitle{
+    font-size: 24px;
+    color: #152b65;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+
+.lost{
+    position: relative;
+    left: 38px;
+}
+.Option{
+    height: fit-content;
+    width: 202px;
+    display: table-cell;
+    margin: 0 38px 0 0;
+    border-radius: 35px;
+    border: 3px solid #152b65;
+}
+.Option:hover{
+    -webkit-box-shadow: -8px 8px 5px 0px rgba(21,42,101,0.64);
+    -moz-box-shadow: -8px 8px 5px 0px rgba(21,42,101,0.64);
+    box-shadow: -8px 8px 5px 0px rgba(21,42,101,0.64);
+    cursor: pointer;
+}
+.imageOption{
+    height: 136px;
+    border-radius: 25px;
+    margin: 4vh auto 0 auto; 
+    display: block;
+}
+.nameOption{
+    font-size: 20px;
+    margin-top: 4vh;
+    color: #152b65;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 163px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3vh;
+}
+
+.bola{
+    position: absolute;
+    /*background-color: ##E3EAFA;*/
+    background-color: #E3EAFA;
+    width: 48vw;
+    height: 48vw;
+    /*width: 693px;
+    height: 693px;*/
+    border-radius: 50%;
+}
+.bola1{
+    left: -19vw;
+    top: -538px;
+}
+.bola2{
+    left: 10vw;
+    top: -449px;
+}
+.bola3{
+    left: 46vw;
+    top: -386px;
+}
+.bola4{
+    left: 71vw;
+    top: -449px;
+}
+
+@media only screen and (max-width: 500px) {
+    .bola1{
+        display: none;
+    }
+    .bola2{
+        left: -6vw;
+        top: -65px;
+        width: 71vw;
+        height: 53vw;
+    }
+    .bola3{
+        left: 47vw;
+        top: -35px;
+        width: 62vw;
+        height: 58vw;
+    }
+    .bola4{
+        display: none;
+    }
+
+    .icon{
+        top: 85px;
+    }
+    .logo{
+        width: 108px;
+        height: 108px;
+    }
+    .title{
+        font-size: 26px;
+    }
+
+    .menu{
+        width: 90%;
+        top: 125px;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+
+    }
+    .titlemenu{
+        width: 60%;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        text-align: center;
+        margin-bottom: 7vh;
+    }
+
+    .Option{
+        height: fit-content;
+        width: 100%;
+        display: block;
+        margin-bottom: 5vh;
+        background-color: #152b65;
+    }
+    .imageOption{
+        width: 50%;
+        margin: 0; 
+        display: inline-block;
+        border-radius: 35px;
+    }
+    .nameOption{
+        font-size: 5vw;
+        color: #ffffff;
+        font-weight: bolder;
+        display: inline-block;
+        margin: 0;
+        position: relative;
+        width: 50%;
+        top: 1.6vh;
+    }
+    .lost{
+        left: 0;
+    }
+}
