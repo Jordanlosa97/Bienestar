@@ -16,7 +16,7 @@ class Home extends Component {
   UNSAFE_componentWillMount(){
     if(firebase.auth().currentUser !== null)
     {
-      this.props.history.push("/studentMenu")
+      
     }
     else
     {
@@ -33,11 +33,6 @@ class Home extends Component {
     const _this = this;
     firebaseAuth.auth().setPersistence(firebaseAuth.auth.Auth.Persistence.LOCAL)
     .then(function() {
-      // Existing and future Auth states are now persisted in the current
-      // session only. Closing the window would clear any existing state even
-      // if a user forgets to sign out.
-      // ...
-      // New sign-in will be persisted with session persistence.
       console.log("Logeando con microsoft")
       var provider = new firebaseAuth.auth.OAuthProvider('microsoft.com');
       provider.setCustomParameters({
@@ -60,17 +55,7 @@ class Home extends Component {
         }
         else
         {
-          if(rol === 'Estudiante')
-          {
-            //Enviar a pantalla estudiante
-            console.log('estudiante usuario');
-            _this.props.history.push('/StudentMenu')
-          }
-          else
-          {
-            //Enviar a administrador
-            console.log('admin usuario');
-          }
+          _this.props.history.push('/StudentMenu')
         }
         
         })

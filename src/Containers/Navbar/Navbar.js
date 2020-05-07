@@ -24,15 +24,7 @@ class navBar extends Component {
       } else {
         // No user is signed in.
         console.log("user null")
-        
-        if(this.props.history !== null)
-        {
-          this.props.history.push("/home")
-        }
-        else
-        {
-          
-        }
+        _this.props.history.push("/home")
       }
     });
   }
