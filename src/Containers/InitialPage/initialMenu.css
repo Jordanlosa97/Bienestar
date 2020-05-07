@@ -131,9 +131,13 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
+    body{
+        overflow-y: scroll;
+    }
     .bola1{
         display: none;
     }
+    
     .bola2{
         left: -6vw;
         top: -65px;

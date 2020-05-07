@@ -28,3 +28,14 @@
     background-color: #142b64;
     color: white;
 }
+@media only screen and (max-width: 500px) {
+    body{
+        overflow-y: scroll;
+    }
+    .navbar{
+        z-index: 1000;
+    }
+    .font{
+        display: none;
+    }
+}

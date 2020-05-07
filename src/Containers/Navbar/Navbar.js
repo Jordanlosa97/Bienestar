@@ -24,7 +24,15 @@ class navBar extends Component {
       } else {
         // No user is signed in.
         console.log("user null")
-        this.props.history.push("/home")
+        
+        if(this.props.history !== null)
+        {
+          this.props.history.push("/home")
+        }
+        else
+        {
+          
+        }
       }
     });
   }
@@ -41,13 +49,13 @@ class navBar extends Component {
       if(this.state.user !== null)
       {
         return (
-            <NavDropdown className={classes.font+' '+classes.UserButton} 
+            <NavDropdown className={classes.UserButton}
                 title={<span className={classes.textName}>{this.state.user.displayName}</span>} 
                 id="nameButton"
             >
-                <NavDropdown.Item className={classes.font}>Configuracion</NavDropdown.Item>
+                <NavDropdown.Item className={classes.name}>Configuracion</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item className={classes.font} onClick={() => this.LogOut()}>Cerrar sesion</NavDropdown.Item>
+                <NavDropdown.Item className={classes.name} onClick={() => this.LogOut()}>Cerrar sesion</NavDropdown.Item>
             </NavDropdown>
           )
       }

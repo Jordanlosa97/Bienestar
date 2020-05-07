@@ -90,9 +90,6 @@ class Home extends Component {
       console.log("error in setPersistence code: " + errorCode + 
       " error message  " + errorMessage)
     });
-    
-    
-    
   }
 
   login = () => {
