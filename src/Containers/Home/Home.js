@@ -1,7 +1,8 @@
 import React, { Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Home.css';
-import firebase,{provider} from '../../Intances/firebase.js'
+import firebase  from '../../Intances/firebase.js'
+import * as firebaseAuth from 'firebase/app';
 import logo from '../../images/ic_logo-web.png'
 
 
@@ -13,6 +14,16 @@ class Home extends Component {
     email: '',
     password: ''
   }
+  UNSAFE_componentWillMount(){
+    if(firebase.auth().currentUser !== null)
+    {
+      this.props.history.push("/studentMenu")
+    }
+    else
+    {
+
+    }
+  }
   setSmShow = (s) => {
     this.setState({
       smShow: s
@@ -21,9 +32,9 @@ class Home extends Component {
 
   loginMicrosoft = () => {
     console.log("Logeando con microsoft")
+    var provider = new firebaseAuth.auth.OAuthProvider('microsoft.com');
     provider.setCustomParameters({
       // Force re-consent.
-      prompt: 'consent',
       // Target specific email with login hint.
       login_hint: 'student@unisabana.edu.co'
     });

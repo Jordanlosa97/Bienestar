@@ -2,7 +2,7 @@
 
 html, body {
     max-width: 100%;
-    max-height: max-content;
+    max-height: 100%;
     overflow-x: hidden;
 }
 
@@ -33,6 +33,9 @@ html, body {
     border-style: solid;
     border-color:#152b65;
     margin:auto;
+    -webkit-box-shadow: -8px 8px 5px 0px rgba(201,204,212,1);
+-moz-box-shadow: -8px 8px 5px 0px rgba(201,204,212,1);
+box-shadow: -8px 8px 5px 0px rgba(201,204,212,1);
 }
 .Option:hover{
     -webkit-box-shadow: -8px 8px 5px 0px rgba(21,42,101,0.64);
@@ -67,25 +70,25 @@ html, body {
 }
 .bola1{
     left: -285px;
-    top: -453px;
+    top: -553px;
 }
 .bola2{
     left: 125px;
-    top: -340px;
+    top: -540px;
 }
 .bola3{
     left: 690px;
-    top: -265px;
+    top: -465px;
 }
 .bola4{
     left: 950px;
-    top: -425px;
+    top: -525px;
 }
 
 .icon{
     z-index: 1;
     position: relative;
-    top: 50px;
+    top: 90px;
 }
 .logo{
     width: 148px;
@@ -102,10 +105,11 @@ html, body {
 }
 .imageOption{
     height: 195px;
+    width: 195px;
     border-radius: 17px;
 }
 .listOption{
-    height: 440px;
+    height: 340px;
     justify-content: center;
     align-items: center;
     justify-items: center;
@@ -120,7 +124,7 @@ html, body {
 .menu{
     z-index: 5;
     position: relative;
-    top: 60px;
+    top: 80px;
     margin-right: auto;
     margin-left: auto;
     border-radius: 47px;

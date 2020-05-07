@@ -15,9 +15,8 @@ var firebaseConfig = {
   };
   // Initialize Firebase
 
-  const Firebase = firebase.initializeApp(firebaseConfig);
+  var Firebase = firebase.initializeApp(firebaseConfig);
   export var provider = new firebase.auth.OAuthProvider('microsoft.com');
-
-  export default Firebase;
+  export default Firebase
   
   

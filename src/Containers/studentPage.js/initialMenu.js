@@ -2,9 +2,10 @@ import React, { Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './initialMenu.css';
-import firebase,{provider} from '../../Intances/firebase.js'
+import * as firebaseAuth from 'firebase/app';
 import logo from '../../images/ic_logo-web.png'
 import objectlost from '../../images/objectLost.jpeg';
+import sportEquipment from '../../images/sportEquipment.jpg'
 import {Col, Row, Container} from 'react-bootstrap'
 
 
@@ -16,100 +17,10 @@ class InitialMenu extends Component {
     email: '',
     password: ''
   }
+
   setSmShow = (s) => {
     this.setState({
       smShow: s
-    })
-  }
-
-  loginMicrosoft = () => {
-    console.log("Logeando con microsoft")
-    provider.setCustomParameters({
-      // Force re-consent.
-      prompt: 'consent',
-      // Target specific email with login hint.
-      login_hint: 'student@unisabana.edu.co'
-    });
-    const _this = this;
-    firebase.auth().signInWithPopup(provider)
-      .then(function(result) {
-        console.log(result.user)
-        firebase.database().ref('users/' + result.user.uid).once('value').then(function(snapshot) {
-        var rol = (snapshot.val() && snapshot.val().rol) || 'Anonymous';
-        if(rol === 'Anonymous')
-        {
-          console.log('Nuevo usuario');
-          firebase.database().ref('users/' + result.user.uid).set({
-          rol: 'Estudiante'
-            })
-        }
-        else
-        {
-          if(rol === 'Estudiante')
-          {
-            //Enviar a pantalla estudiante
-            console.log('estudiante usuario');
-            _this.props.history.push('/StudentMenu')
-            
-          }
-          else
-          {
-            //Enviar a administrador
-            console.log('admin usuario');
-          }
-        }
-        
-        })
-        
-      })
-      .catch(function(error) {
-        // Handle error.
-
-        console.log('Error login microsoft')
-        console.log(error)
-      });
-  }
-
-  login = () => {
-    console.log(this.state.email  + '  ' + this.state.password)
-    /* 
-    ---Create new user---
-    firebase.auth().createUserWithEmailAndPassword(this.state.email,this.state.password)
-    .then((response) => {
-      console.log(response)
-      firebase.database().ref('users/' + response.user.uid).set({
-        rol: 'Estudiante'
-      })
-    })
-    .catch((error) => {
-      console.log(error)
-    })
-    */
-   firebase.auth().signInWithEmailAndPassword(this.state.email,this.state.password)
-    .then((response) => {
-      console.log(response)
-      firebase.database().ref('users/' + response.user.uid).once('value').then(function(snapshot) {
-        var rol = (snapshot.val() && snapshot.val().rol) || 'Anonymous';
-        console.log(rol)
-        if(rol === 'Estudiante')
-        {
-          //Enviar a pantalla estudiante
-        }
-        else
-        {
-          //Enviar a administrador
-        }
-      })
-    })
-    .catch((error) => {
-      console.log(error)
-    })
-    this.setSmShow(false)
-  }
-  changeState = (type, val) => {
-    this.setState({
-      ...this.state,
-      [type]: val.target.value
     })
   }
 
@@ -134,8 +45,8 @@ class InitialMenu extends Component {
               </Col>
               <Col md={6} xs={12} className="OptionCol">
                 <div className="Option">
-                  <img alt={'ds'} className="imageOption" src={objectlost}></img>
-                  <h4 className="nameOption">Objetos perdidos</h4>
+                  <img alt={'ds'} className="imageOption" src={sportEquipment}></img>
+                  <h4 className="nameOption">{firebaseAuth.auth().currentUser.displayName}</h4>
                 </div>
               </Col>
             </Row>

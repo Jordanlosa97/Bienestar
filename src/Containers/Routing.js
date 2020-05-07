@@ -12,6 +12,9 @@ export default class Routing extends Component {
           <Route exact path="/Home" render ={props => (
               <Home {...props}/>
           )}/>  
+          <Route exact path="/" render ={props => (
+              <Home {...props}/>
+          )}/> 
           <Route exact path="/StudentMenu" render ={props => (
               <InitialMenu {...props}/>
           )}/>             
