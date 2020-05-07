@@ -2,16 +2,16 @@ import React, { Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import classes from './LostObjects.css';
-//import firebase,{provider} from '../../Intances/firebase.js'
 import logo from '../../images/ic_logo-web.png'
 import plus from '../../images/plusIcon.png'
 import objectlost from '../../images/objectLost.jpeg';
-import {Navbar, Nav, NavDropdown, Container} from 'react-bootstrap'
-import axios from 'axios'
+import {Container} from 'react-bootstrap'
+import Navbar from '../Navbar/Navbar.js';
 
 class LostObjects extends Component {
   state = {
-    rol : 'Estudiante'
+    rol : 'Estudiante',
+    user: ''
   }
 
   renderAddIcon() {
@@ -31,25 +31,7 @@ class LostObjects extends Component {
   render() {
     return (
       <Container className={classes.Home}>
-        <Navbar className={classes.navbar} collapseOnSelect expand="lg" bg="#E3EAFA">
-          <Navbar.Brand>
-            <img src={logo} width="30" height="30" className="d-inline-block align-top" alt="B-Sabana"/>
-            <h1 className={classes.titleNav}>B-Sabana</h1>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav style={{position:'absolute',right:'2vw'}}>
-              <Nav.Link className={classes.font}>Home</Nav.Link>
-              <NavDropdown className={classes.font} title="Objetos perdidos" id="collasible-nav-dropdown">
-                <NavDropdown.Item className={classes.font}>Buscar obejtos</NavDropdown.Item>
-                <NavDropdown.Item className={classes.font}>¿Encontraste algo?</NavDropdown.Item>
-                <NavDropdown.Item className={classes.font}>¿Tenemos algo tuyo?</NavDropdown.Item>
-              </NavDropdown>
-              <Nav.Link className={classes.font}>Implementos deportivos</Nav.Link>
-              <h4 className={classes.name}>Juan Felipe Rivadeneira Delgado</h4>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+        <Navbar history = {this.props.history} />
 
         <div className={classes.icon}>
           <img alt={'ds'} className={classes.logo} src={logo}></img>

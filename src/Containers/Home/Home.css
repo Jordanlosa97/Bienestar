@@ -21,6 +21,7 @@ body {
 }
 
 .bola{
+    z-index: 0;
     position: absolute;
     /*background-color: ##E3EAFA;*/
     background-color: #E3EAFA;

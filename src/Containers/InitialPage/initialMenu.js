@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import classes from './initialMenu.css';
-//import firebase,{provider} from '../../Intances/firebase.js'
+import Navbar from '../Navbar/Navbar.js';
 import logo from '../../images/ic_logo-web.png'
 import objectlost from '../../images/objectLost.jpeg';
 import {Container} from 'react-bootstrap'
@@ -12,6 +12,7 @@ class InitialMenu extends Component {
   render() {
   return (
     <Container className={classes.Home}>
+      <Navbar history ={this.props.history}/>
       <div className={classes.icon}>
         <img alt={'ds'} className={classes.logo} src={logo}></img>
         <h1 className={classes.title}>B-Sabana</h1>

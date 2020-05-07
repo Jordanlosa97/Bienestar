@@ -1,0 +1,30 @@
+.titleNav{
+    color: #47525e;
+    font-size: 10px;
+    display: inline;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}   
+.navbar{
+    z-index: 1;
+}
+.BrandLogo{
+    cursor: pointer;
+}
+.UserButton{
+    background-color: #142b64;
+}
+.textName{
+    color: white;
+}
+#nameButton{
+    color: white;
+}
+.UserButton * {
+    background-color: #142b64;
+    color: white;
+}

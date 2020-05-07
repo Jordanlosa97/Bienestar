@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Home.css';
+import classes from './Home.css';
 import firebase  from '../../Intances/firebase.js'
 import * as firebaseAuth from 'firebase/app';
 import logo from '../../images/ic_logo-web.png'
@@ -30,14 +30,22 @@ class Home extends Component {
   }
 
   loginMicrosoft = () => {
-    console.log("Logeando con microsoft")
-    var provider = new firebaseAuth.auth.OAuthProvider('microsoft.com');
-    provider.setCustomParameters({
-      // Force re-consent.
-      // Target specific email with login hint.
-    });
     const _this = this;
-    firebase.auth().signInWithPopup(provider)
+    firebaseAuth.auth().setPersistence(firebaseAuth.auth.Auth.Persistence.LOCAL)
+    .then(function() {
+      // Existing and future Auth states are now persisted in the current
+      // session only. Closing the window would clear any existing state even
+      // if a user forgets to sign out.
+      // ...
+      // New sign-in will be persisted with session persistence.
+      console.log("Logeando con microsoft")
+      var provider = new firebaseAuth.auth.OAuthProvider('microsoft.com');
+      provider.setCustomParameters({
+        // Force re-consent.
+        // Target specific email with login hint.
+        login_hint: 'user@unisabana.edu.co'
+      });
+      return firebase.auth().signInWithPopup(provider)
       .then(function(result) {
         console.log(result.user)
         firebase.database().ref('users/' + result.user.uid).once('value').then(function(snapshot) {
@@ -74,6 +82,17 @@ class Home extends Component {
         console.log('Error login microsoft')
         console.log(error)
       });
+    })
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log("error in setPersistence code: " + errorCode + 
+      " error message  " + errorMessage)
+    });
+    
+    
+    
   }
 
   login = () => {

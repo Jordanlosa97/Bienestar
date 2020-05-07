@@ -117,6 +117,7 @@ body {
     margin-right: auto;
 }
 .Option{
+    background-color: white;
     /*width: fit-content;
     display: inline-block;
     position: absolute;*/
@@ -152,6 +153,7 @@ body {
 }
 
 .bola{
+    z-index: -1;
     position: absolute;
     /*background-color: ##E3EAFA;*/
     background-color: #E3EAFA;
