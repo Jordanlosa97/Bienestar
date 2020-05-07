@@ -11,7 +11,7 @@ import axios from 'axios'
 
 class LostObjects extends Component {
   state = {
-    rol : 'Administrador'
+    rol : 'Estudiante'
   }
 
   renderAddIcon() {
@@ -46,6 +46,7 @@ class LostObjects extends Component {
                 <NavDropdown.Item className={classes.font}>¿Tenemos algo tuyo?</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link className={classes.font}>Implementos deportivos</Nav.Link>
+              <h4 className={classes.name}>Juan Felipe Rivadeneira Delgado</h4>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

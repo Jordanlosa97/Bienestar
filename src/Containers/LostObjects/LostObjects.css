@@ -13,6 +13,18 @@ body {
 .font{
     font-family: 'Montserrat', sans-serif;
 }
+.name{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    padding: .5rem 1rem;
+    color: rgba(0,0,0,.5);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+}
 
 .Home{
     /*width: -webkit-fill-available;*/
