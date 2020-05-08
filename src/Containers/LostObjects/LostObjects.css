@@ -216,7 +216,7 @@ body {
     }
 
     .icon{
-        top: 9vh;
+        top: 6vh;
     }
     .logo{
         width: 36vw;
@@ -234,7 +234,7 @@ body {
 
     .menu{
         width: 90%;
-        top: 9vh;
+        top: 6vh;
         margin-right: auto;
         margin-left: auto;
         display: block;
@@ -287,11 +287,17 @@ body {
     }
 
     .plus{
-        top: 5vh;
+        bottom: -10vh;
         right: 5vw;
     }
     .addIcon{
         width: 7.3vw;
         height: 7.3vw;
+    }
+}
+
+@media only screen and (max-width: 376px) {
+    .plus{
+        bottom: -15vh;
     }
 }
