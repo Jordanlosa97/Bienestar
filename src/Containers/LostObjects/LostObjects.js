@@ -9,7 +9,6 @@ import firebase  from '../../Intances/firebase.js'
 import objectlost from '../../images/objectLost.jpeg';
 import {Container} from 'react-bootstrap'
 import Navbar from '../Navbar/Navbar.js';
-import firebase from '../../Intances/firebase.js';
 
 class LostObjects extends Component {
   state = {
