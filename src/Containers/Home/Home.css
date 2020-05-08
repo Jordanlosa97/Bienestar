@@ -6,7 +6,6 @@ html, body {
 }
 body {
     position: relative;
-    overflow-y: hidden;
 }
 
 .TitleNav{
@@ -49,18 +48,23 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
+    body{
+        position: absolute;
+        overflow-y: hidden;
+    }
+
     .bola1{
         display: none;
     }
     .bola2{
         left: -35vw;
-        top: -125px;
+        top: -130px;
         width: 110vw;
         height: 110vw;
     }
     .bola3{
         left: 47vw;
-        top: -38px;
+        top: -50px;
         width: 110vw;
         height: 110vw;
     }

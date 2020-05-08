@@ -286,12 +286,12 @@ body {
     .plus{
         bottom: -20vh;
         right: 5vw;
-    }
-    @media only screen and (height: 823px) and (width: 411px){
+    } 
+    @media only screen and (min-height: 800px){
         .plus{
             bottom: -10vh;
         }
-    }    
+    }  
     .addIcon{
         width: 7.3vw;
         height: 7.3vw;
@@ -302,7 +302,7 @@ body {
     .plus{
         bottom: -25vh;
     }
-    @media only screen and (height: 812px) and (width: 375px){
+    @media only screen and (min-height: 812px){
         .plus{
             bottom: -6vh;
         }
