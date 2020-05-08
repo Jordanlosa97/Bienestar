@@ -287,8 +287,8 @@ body {
     }
 
     .plus{
-        top: 5vh;
-        right: 5vw;
+        bottom: -10vh;
+        right: 10vw;
     }
     .addIcon{
         width: 7.3vw;
