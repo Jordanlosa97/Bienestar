@@ -87,7 +87,7 @@ body {
     font-size: 34px;
     color: #47525e;
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .button{
@@ -110,7 +110,7 @@ body {
     color: #FFFFFF;
     font-size: 26px;
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+    font-weight: 600;
     padding-top: 13px;
 }
 .buttonTitle:hover{

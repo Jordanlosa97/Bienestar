@@ -32,21 +32,6 @@ body {
     height: 100vh;
 }
 
-.navbar{
-    z-index: 1;
-}
-.titleNav{
-    color: #47525e;
-    font-size: 10px;
-    display: inline;
-    padding-right: .5rem;
-    padding-left: .5rem;
-    font-size: 1rem;
-    padding: .5rem 1rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bolder;
-}
-
 .plus{
     z-index: 1;
     position: absolute;
@@ -81,7 +66,7 @@ body {
 .icon{
     z-index: 1;
     position: relative;
-    top: 75px;
+    top: 15vh;
     margin: auto;
     display: block;
     width: fit-content;
@@ -95,16 +80,16 @@ body {
 }
 .title{
     font-size: 28px;
-    color: #47525e;
+    color: #47525E;
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .menu{
     display: block;
     width: 100%;
     position: relative;
-    top: 95px;
+    top: 19vh;
     margin-left: auto;
     margin-right: auto;
 }
@@ -131,6 +116,7 @@ body {
     -moz-box-shadow: -8px 8px 5px 0px rgba(21,42,101,0.64);
     box-shadow: -8px 8px 5px 0px rgba(21,42,101,0.64);
     cursor: pointer;
+    text-decoration: none;
 }
 .imageOption{
     height: 11vw;
@@ -144,9 +130,9 @@ body {
     margin-top: 4vh;
     color: #152b65;
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+    font-weight: 600;
     text-align: center;
-    width: 163px;
+    width: 152px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 3vh;
@@ -216,7 +202,7 @@ body {
     }
 
     .icon{
-        top: 6vh;
+        top: 9vh;
     }
     .logo{
         width: 36vw;
@@ -234,7 +220,7 @@ body {
 
     .menu{
         width: 90%;
-        top: 6vh;
+        top: 8vh;
         margin-right: auto;
         margin-left: auto;
         display: block;
@@ -271,7 +257,7 @@ body {
     .nameOption{
         font-size: 5vw;
         color: #ffffff;
-        font-weight: bolder;
+        font-weight: 500;
         display: block;
         margin: 0 auto 0 auto;
         position: relative;
@@ -285,9 +271,12 @@ body {
     .up{
         width: fit-content;
     }
+    .down{
+        width: fit-content;
+    }
 
     .plus{
-        bottom: -10vh;
+        bottom: -7vh;
         right: 5vw;
     }
     .addIcon{
@@ -298,6 +287,6 @@ body {
 
 @media only screen and (max-width: 376px) {
     .plus{
-        bottom: -15vh;
+        bottom: -12vh;
     }
 }

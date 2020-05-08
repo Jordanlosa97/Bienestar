@@ -7,10 +7,13 @@
     font-size: 1rem;
     padding: .5rem 1rem;
     font-family: 'Montserrat', sans-serif;
-    font-weight: bolder;
 }   
 .navbar{
     z-index: 1;
+    background-color: #E3EAFA;
+    width: 100vw;
+    position: absolute;
+    left: 0;
 }
 .BrandLogo{
     cursor: pointer;

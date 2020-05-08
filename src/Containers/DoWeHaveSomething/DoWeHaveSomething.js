@@ -1,21 +1,33 @@
 import React, { Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import classes from './LostObjects.css';
+import classes from './DoWeHaveSomething.css';
 import logo from '../../images/ic_logo-web.png'
-import plus from '../../images/plusIcon.png'
 
 import firebase  from '../../Intances/firebase.js'
-import objectlost from '../../images/objectLost.jpeg';
-import {Container} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+import background from '../../images/warehouse.jpeg';
+import {Container} from 'react-bootstrap'
 import Navbar from '../Navbar/Navbar.js';
 
-class LostObjects extends Component {
+class DoWeHaveSomething extends Component {
   state = {
     rol : 'Estudiante',
-    user: ''
+    user: '',
+    hideNav: window.innerWidth,
   }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.resize.bind(this));
+    this.resize();
+  }
+
+  resize() {
+    let currentHideNav = (window.innerWidth <= 500);
+    if (currentHideNav !== this.state.hideNav) {
+        this.setState({hideNav: currentHideNav});
+    }
+  }
+
   UNSAFE_componentWillMount(){
     console.log('se actualiza')
     const _this = this
@@ -53,24 +65,23 @@ class LostObjects extends Component {
     });
   }
 
-  renderAddIcon() {
-    if(this.state.rol === 'Estudiante'){
-      return(<div></div>)
-    }
-    if(this.state.rol === 'Administrador'){
-      return(
-        <div className={classes.plus}>
-          <img alt={'plus'} className={classes.addIcon} src={plus}></img>
-          <h1 className={classes.register}>Registrar objeto</h1>
-        </div>
+  renderNavbar(){
+    if(window.innerWidth >= 500){
+      return (
+        <Navbar history = {this.props.history}/>
       )
     }
+    else{
+      return(<div></div>)
+    }
   }
-
+  
   render() {
     return (
       <Container className={classes.Home}>
-        <Navbar history = {this.props.history} />
+        {this.renderNavbar()}
+
+        <img alt={'ds'} className={classes.background} src={background}></img>
 
         <div className={classes.icon}>
           <img alt={'ds'} className={classes.logo} src={logo}></img>
@@ -78,29 +89,11 @@ class LostObjects extends Component {
         </div>
 
         <div className={classes.menu}>
-          <div className={classes.order}>
-            <Link to="/BuscarObjetos" className={`${classes.search}  ${classes.Option}`}>
-              <img alt={'ds'} className={classes.imageOption} src={objectlost}></img>
-              <div className={classes.bName}>
-                <h4 className={classes.nameOption}>Buscar objetos</h4>
-              </div>
-            </Link>
-
-            <Link to="/EncontrasteAlgo" className={`${classes.found}  ${classes.Option}`}>
-              <img alt={'ds'} className={classes.imageOption} src={objectlost}></img>
-              <div className={classes.bName}>
-                <h4 className={classes.nameOption}>¿Encontraste algo?</h4>
-              </div>
-            </Link>
-
-            <Link to="/TenemosAlgoTuyo" className={`${classes.weHave}  ${classes.Option}`}>
-              <img alt={'ds'} className={classes.imageOption} src={objectlost}></img>
-              <div className={classes.bName}>  
-                <h4 className={`${classes.page}  ${classes.nameOption}`}>¿Tenemos un objeto tuyo?</h4>
-                <h4 className={`${classes.up}  ${classes.nameOption}`}>¿Tenemos un</h4>
-                <h4 className={`${classes.down}  ${classes.nameOption}`}>objeto tuyo?</h4>
-              </div>
-            </Link>
+          <div className={classes.titlemenu}>
+            <h3 className={classes.texttitle}>{'¿Tenemos un objeto tuyo?'}</h3>
+          </div>
+          <div className={classes.blueBackground}>
+            <p className={classes.text}>No te angusties. Tus pertenencias están seguras con nosotros. Si tu objeto está en la lista de lo que se encuentra en objetos perdidos, deberás acercarte a la oficina ubicada detrás del Edificio F con tu ID, tu cedula y un número de teléfono para poderte contactar en caso de necesitarte nuevamente. Deberás llenar un formulario, y así podrás recuperar tus pertenencias.</p>
           </div>
         </div>
         
@@ -110,11 +103,9 @@ class LostObjects extends Component {
           <div className={`${classes.bola}  ${classes.bola3}`}></div>
           <div className={`${classes.bola}  ${classes.bola4}`}></div>
         </div>
-
-        {this.renderAddIcon()}
       </Container>
     );
   }
 }
 
-export default LostObjects;
+export default DoWeHaveSomething;

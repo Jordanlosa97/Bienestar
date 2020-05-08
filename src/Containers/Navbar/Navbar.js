@@ -62,7 +62,7 @@ class navBar extends Component {
   }
   render() {
     return (
-        <Navbar className={classes.navbar} collapseOnSelect expand="lg" bg="#E3EAFA">
+        <Navbar className={classes.navbar} collapseOnSelect expand={"lg"} bg={'#E3EAFA'}>
           <Navbar.Brand className={classes.BrandLogo} onClick={() => {this.props.history.push("/StudentMenu")}}>
             <img src={logo} width="30" height="30"  alt="B-Sabana"/>
             <h1 className={classes.titleNav}>B-Sabana</h1>
