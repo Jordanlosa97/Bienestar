@@ -5,6 +5,7 @@ import classes from './initialMenu.css';
 import Navbar from '../Navbar/Navbar.js';
 import logo from '../../images/ic_logo-web.png'
 import objectlost from '../../images/objectLost.jpeg';
+import sportsBalls from '../../images/sportsBalls.jpeg';
 import {Container} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 
@@ -25,14 +26,18 @@ class InitialMenu extends Component {
         </div>
 
         <div className={`${classes.sports}  ${classes.Option}`}>
-          <img alt={'ds'} className={classes.imageOption} src={objectlost}></img>
+          <img alt={'ds'} className={classes.imageOption} src={sportsBalls}></img>
           <h4 className={classes.nameOption}>Implementos deportivos</h4>
         </div>
 
         <Link to="/ObjetosPerdidos" className={`${classes.lost}  ${classes.Option}`} 
               style={{textDecoration:'none'}}>
           <img alt={'ds'} className={classes.imageOption} src={objectlost}></img>
-          <h4 className={classes.nameOption}>Objetos perdidos</h4>
+          <h4 className={`${classes.web}  ${classes.nameOption}`}>Objetos perdidos</h4>
+          <div className={classes.cell}>
+            <h4 className={`${classes.up}  ${classes.nameOption}`}>Objetos</h4>
+            <h4 className={`${classes.down}  ${classes.nameOption}`}>perdidos</h4>
+          </div>
         </Link>
       </div>
       

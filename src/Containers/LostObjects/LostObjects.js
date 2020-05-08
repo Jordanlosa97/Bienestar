@@ -6,7 +6,12 @@ import logo from '../../images/ic_logo-web.png'
 import plus from '../../images/plusIcon.png'
 
 import firebase  from '../../Intances/firebase.js'
-import objectlost from '../../images/objectLost.jpeg';
+
+import background from '../../images/objectLost.jpeg';
+import searchObject from '../../images/searchObject.jpeg';
+import foundSomething from '../../images/foundSomething.jpeg';
+import DoWeHaveSomething from '../../images/DoWeHaveSomething.jpeg';
+
 import {Container} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import Navbar from '../Navbar/Navbar.js';
@@ -67,6 +72,12 @@ class LostObjects extends Component {
     }
   }
 
+  renderBackground(){
+    return(
+      <img alt={'ds'} className={classes.background} src={background}></img>
+    )
+  }
+
   render() {
     return (
       <Container className={classes.Home}>
@@ -80,21 +91,21 @@ class LostObjects extends Component {
         <div className={classes.menu}>
           <div className={classes.order}>
             <Link to="/BuscarObjetos" className={`${classes.search}  ${classes.Option}`}>
-              <img alt={'ds'} className={classes.imageOption} src={objectlost}></img>
+              <img alt={'ds'} className={classes.imageOption} src={searchObject}></img>
               <div className={classes.bName}>
                 <h4 className={classes.nameOption}>Buscar objetos</h4>
               </div>
             </Link>
 
             <Link to="/EncontrasteAlgo" className={`${classes.found}  ${classes.Option}`}>
-              <img alt={'ds'} className={classes.imageOption} src={objectlost}></img>
+              <img alt={'ds'} className={classes.imageOption} src={foundSomething}></img>
               <div className={classes.bName}>
                 <h4 className={classes.nameOption}>¿Encontraste algo?</h4>
               </div>
             </Link>
 
             <Link to="/TenemosAlgoTuyo" className={`${classes.weHave}  ${classes.Option}`}>
-              <img alt={'ds'} className={classes.imageOption} src={objectlost}></img>
+              <img alt={'ds'} className={classes.imageOption} src={DoWeHaveSomething}></img>
               <div className={classes.bName}>  
                 <h4 className={`${classes.page}  ${classes.nameOption}`}>¿Tenemos un objeto tuyo?</h4>
                 <h4 className={`${classes.up}  ${classes.nameOption}`}>¿Tenemos un</h4>

@@ -32,6 +32,14 @@ body {
     height: 100vh;
 }
 
+.background{
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    left: 0;
+    filter: opacity(0.1);
+}
+
 .plus{
     z-index: 1;
     position: absolute;
@@ -178,7 +186,7 @@ body {
         overflow-y: scroll;
     }
 
-    .navbar{
+    .background{
         display: none;
     }
 
@@ -244,15 +252,15 @@ body {
         padding: 0;
     }
     .imageOption{
-        width: 45%;
-        height: 14.2vh;
+        width: 40%;
+        height: 100%;
         margin: 0; 
         display: inline-block;
         border-radius: 35px;
     }
     .bName{
         display: inline-block;
-        width: 55%;
+        width: 60%;
     }
     .nameOption{
         font-size: 5vw;
@@ -276,9 +284,14 @@ body {
     }
 
     .plus{
-        bottom: -7vh;
+        bottom: -20vh;
         right: 5vw;
     }
+    @media only screen and (height: 823px) and (width: 411px){
+        .plus{
+            bottom: -10vh;
+        }
+    }    
     .addIcon{
         width: 7.3vw;
         height: 7.3vw;
@@ -287,6 +300,11 @@ body {
 
 @media only screen and (max-width: 376px) {
     .plus{
-        bottom: -12vh;
+        bottom: -25vh;
     }
+    @media only screen and (height: 812px) and (width: 375px){
+        .plus{
+            bottom: -6vh;
+        }
+    } 
 }
