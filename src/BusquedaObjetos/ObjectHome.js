@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './ObjectHome.module.css';
 import ObjectCategory from './ObjectCategory.js';
 import Logo from '../Assest/Image/ic_logo-web.png';
+import Background from '../Assest/Image/background.jpeg';
 
 class ObjectHome extends Component {
   state = {
@@ -18,6 +19,7 @@ class ObjectHome extends Component {
   render() {
     return (
       <div className={styles.background}>
+        {/* <img className={styles.background} src={Background} /> */}
         <div className={styles.container}>
           <div>
             <img className={styles.logo} src={Logo} />
