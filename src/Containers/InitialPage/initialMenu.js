@@ -9,6 +9,7 @@ import {Container} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 
 class InitialMenu extends Component {
+
   render() {
   return (
     <Container className={classes.Home}>

@@ -11,6 +11,7 @@ class navBar extends Component {
     rol : 'Estudiante',
     user: ''
   }
+  
   UNSAFE_componentWillMount(){
     console.log('se actualiza')
     const _this = this
@@ -28,6 +29,7 @@ class navBar extends Component {
       }
     });
   }
+
   LogOut = () => {
     const _this = this;
     firebase.auth().signOut().then(function() {
@@ -37,14 +39,15 @@ class navBar extends Component {
         // An error happened.
       });
   }
+
   getUserButton(){
       if(this.state.user !== null)
       {
         return (
             <NavDropdown className={classes.UserButton}
                 title={<span className={classes.textName}>{this.state.user.displayName}</span>} 
-                id="nameButton"
-            >
+                alignRight="true" 
+                bsPrefix>
                 <NavDropdown.Item className={classes.name}>Configuracion</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item className={classes.name} onClick={() => this.LogOut()}>Cerrar sesion</NavDropdown.Item>
@@ -53,7 +56,7 @@ class navBar extends Component {
       }
       else
       {
-          return null
+          return <div></div>
       }
       
   }
